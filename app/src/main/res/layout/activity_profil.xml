@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="24dp"
+    android:background="@drawable/bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Profil"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="24dp" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imageProfile"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginBottom="12dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/profil"
+            app:shapeAppearanceOverlay="@style/CircleImageView" />
+
+
+        <Button
+            android:id="@+id/btnGantiFoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#034479"
+            android:text="Ganti Foto" />
+
+        <EditText
+            android:id="@+id/etNama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nama"
+            android:inputType="textPersonName"
+            android:layout_marginTop="20dp" />
+
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:layout_marginTop="12dp" />
+
+        <EditText
+            android:id="@+id/etNomor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nomor HP"
+            android:inputType="phone"
+            android:layout_marginTop="12dp" />
+
+        <EditText
+            android:id="@+id/etTanggalLahir"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tanggal Lahir"
+            android:focusable="false"
+            android:layout_marginTop="12dp" />
+
+        <RadioGroup
+            android:id="@+id/radioGroupGender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp">
+
+            <RadioButton
+                android:id="@+id/radioLaki"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Laki-laki" />
+
+            <RadioButton
+                android:id="@+id/radioPerempuan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Perempuan"
+                android:layout_marginStart="24dp" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btnSimpan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#034479"
+            android:text="Simpan"
+            android:layout_marginTop="24dp" />
+
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Logout"
+            android:backgroundTint="#B70505"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="12dp" />
+    </LinearLayout>
+</ScrollView>

@@ -9,32 +9,34 @@
     android:gravity="center">
 
 
-    <ImageView
-        android:id="@+id/imageView"
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/lingkar"
         android:layout_width="50dp"
         android:layout_height="52dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="4dp"
-        android:background="@drawable/circle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        app:srcCompat="@drawable/profil"
+        app:shapeAppearanceOverlay="@style/CircleImageView"
+        android:scaleType="centerCrop" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="20dp"
-        android:text="SEMANGAT MENABUNG"
-        android:textColor="#FF9800"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="AYO NABUNG"
+        android:textColor="#FFFFFF"
         android:textSize="23dp"
         android:textStyle="normal|bold|italic"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/tabungan"
         android:layout_width="183dp"
         android:layout_height="153dp"
         android:layout_marginTop="136dp"
@@ -44,26 +46,26 @@
         app:srcCompat="@drawable/tabungan" />
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/klla"
         android:layout_width="209dp"
         android:layout_height="190dp"
         android:layout_marginTop="60dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4"
+        app:layout_constraintTop_toBottomOf="@+id/tabungan"
         app:srcCompat="@drawable/klla" />
 
     <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="140dp"
-        android:layout_height="99dp"
+        android:id="@+id/TipsCuan"
+        android:layout_width="172dp"
+        android:layout_height="106dp"
         android:layout_marginTop="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6"
-        app:layout_constraintVertical_bias="0.222"
-        app:srcCompat="@drawable/cuan" />
+        app:layout_constraintTop_toBottomOf="@+id/klla"
+        app:layout_constraintVertical_bias="0.315"
+        app:srcCompat="@drawable/cuann" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

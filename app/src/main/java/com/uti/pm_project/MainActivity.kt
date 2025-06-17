@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.ImageView
-import com.uti.pm_project.login2Activity
 
 
 class MainActivity : AppCompatActivity() {
@@ -12,7 +11,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val button = findViewById<ImageView>(R.id.logo)
+        val button = findViewById<ImageView>(R.id.lg)
         button.setOnClickListener {
             val intent = Intent(this, login2Activity::class.java)
             startActivity(intent)

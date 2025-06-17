@@ -6,29 +6,20 @@
     android:orientation="vertical"
     android:padding="24dp"
     android:gravity="center"
-    android:background="#034479">
+    android:background="@drawable/bg">
+
 
     <ImageView
         android:id="@+id/logo"
         android:layout_width="224dp"
         android:layout_height="299dp"
-        app:srcCompat="@drawable/logo" />
-
-    <TextView
-        android:id="@+id/txtTitle"
-        android:text="Login Aplikasi"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:textColor="#FFFFFF"
-        android:layout_marginBottom="32dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        app:srcCompat="@drawable/lg" />
 
     <EditText
         android:id="@+id/edtUsername"
         android:hint="Username"
         android:inputType="text"
-        android:textColor="#FFFF00"
+        android:textColor="#FFFFFF"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginBottom="16dp"/>
@@ -46,8 +37,19 @@
         android:id="@+id/btnLogin"
         android:text="Login"
         android:textColor="#FFFFFF"
-        android:backgroundTint="#D3D9E3"
+        android:backgroundTint="#034479"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/signUpText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Belum punya akun? Sign Up"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="24dp"
+        />
 
 </LinearLayout>

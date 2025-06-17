@@ -8,12 +8,11 @@
     android:orientation="vertical"
     android:padding="24dp"
     android:gravity="center"
-    android:background="#034479">
+    android:background="@drawable/bg">
 
     <ImageView
-        android:id="@+id/logo"
-        android:layout_width="224dp"
-        android:layout_height="299dp"
-        app:srcCompat="@drawable/logo" />
-
-    </LinearLayout>
+        android:id="@+id/lg"
+        android:layout_width="300dp"
+        android:layout_height="399dp"
+        app:srcCompat="@drawable/lg" />
+</LinearLayout>

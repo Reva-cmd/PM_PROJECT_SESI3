@@ -6,15 +6,53 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:icon="@mipmap/logo_round"
+        android:label="Lock Pocket"
+        android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
-        android:theme="@style/Theme.PM_PROJECT"
+        android:theme="@style/Base.Theme.PM_PROJECT"
         tools:targetApi="31">
+
+        <activity
+            android:name=".Profil"
+            android:exported="false" />
+
+        <activity
+            android:name=".TambahTabungan"
+            android:exported="false" />
+
+        <activity
+            android:name=".ambil_tabungan"
+            android:exported="false" />
+
+        <activity
+            android:name=".InputTargetActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".cuan"
+            android:exported="false" />
+
+        <activity
+            android:name=".kelola"
+            android:exported="false" />
+
+        <activity
+            android:name=".tabunganku"
+            android:exported="false" />
+
+        <activity
+            android:name=".utama"
+            android:exported="false" />
+
         <activity
             android:name=".login2Activity"
-            android:exported="true" />
+            android:exported="false" />
+
+        <activity
+            android:name=".SignUpActivity"
+            android:exported="false" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -23,6 +61,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>

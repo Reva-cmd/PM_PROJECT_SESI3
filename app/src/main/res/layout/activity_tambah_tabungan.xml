@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tambah Tabungan"
+            android:textSize="24sp"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:layout_marginBottom="24dp" />
+
+        <EditText
+            android:id="@+id/etJumlah"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Masukkan jumlah tabungan"
+            android:inputType="number"
+            android:padding="12dp"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#BDBDBD"
+            android:layout_marginBottom="16dp" />
+
+        <EditText
+            android:id="@+id/etKeterangan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Keterangan (opsional)"
+            android:inputType="text"
+            android:padding="12dp"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#BDBDBD"
+            android:layout_marginBottom="24dp" />
+
+        <Button
+            android:id="@+id/btnSimpan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Simpan Tabungan"
+            android:textColor="#FFF"
+            android:backgroundTint="#4CAF50"
+            android:layout_marginBottom="12dp" />
+
+        <Button
+            android:id="@+id/btnBatal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Batal"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#BD0704" />
+    </LinearLayout>
+</ScrollView>

@@ -1,10 +1,175 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    android:fillViewport="true"
+    android:id="@+id/main"
     tools:context=".kelola">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:gravity="center_horizontal">
+
+        <ImageView
+            android:id="@+id/btnKembali"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="start"
+            android:src="@drawable/ic_back"
+            android:contentDescription="Kembali"
+            android:layout_marginBottom="16dp" />
+        <TextView
+            android:id="@+id/tambah"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="KELOLA UANGKU"
+            android:textColor="#FFFFFF"
+            android:textSize="29sp"
+            android:textStyle="bold|italic" />
+
+        <TextView
+            android:id="@+id/tahun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="2025"
+            android:textColor="#FFFFFF"
+            android:textSize="29sp"
+            android:textStyle="bold|italic" />
+
+        <Button
+            android:id="@+id/jan"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:text="Januari"
+            android:backgroundTint="#034479"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/feb"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:text="Februari"
+            android:backgroundTint="#034479"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/mar"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:text="Maret"
+            android:backgroundTint="#034479"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/apr"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:text="April"
+            android:backgroundTint="#034479"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/mei"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:text="Mei"
+            android:backgroundTint="#034479"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/juni"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:text="Juni"
+            android:backgroundTint="#034479"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/juli"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:text="Juli"
+            android:backgroundTint="#034479"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/agus"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:text="Agustus"
+            android:backgroundTint="#034479"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/sep"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:text="September"
+            android:backgroundTint="#034479"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/okto"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:text="Oktober"
+            android:backgroundTint="#034479"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/nov"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:text="November"
+            android:backgroundTint="#034479"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/des"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:text="Desember"
+            android:backgroundTint="#034479"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Opsi Lainnya"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="12dp" />
+
+
+        <Button
+            android:id="@+id/btnReset"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Reset Semua Target"
+            android:backgroundTint="#B71C1C"
+            android:textColor="#FFFFFF" />
+
+    </LinearLayout>
+</ScrollView>

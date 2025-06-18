@@ -54,8 +54,17 @@ class Profil : AppCompatActivity() {
 
         val imageUriString = sharedPreferences.getString("profileImageUri", null)
         if (!imageUriString.isNullOrEmpty()) {
-            imageProfile.setImageURI(Uri.parse(imageUriString))
+            val uri = Uri.parse(imageUriString)
+            try {
+                contentResolver.openInputStream(uri)?.close()
+                imageProfile.setImageURI(uri)
+            } catch (e: Exception) {
+                e.printStackTrace()
+                Toast.makeText(this, "Foto tidak dapat dimuat", Toast.LENGTH_SHORT).show()
+                sharedPreferences.edit().remove("profileImageUri").apply()
+            }
         }
+
     }
 
     private fun setupListeners() {
@@ -64,8 +73,10 @@ class Profil : AppCompatActivity() {
         }
 
         findViewById<Button>(R.id.btnGantiFoto).setOnClickListener {
-            val intent = Intent(Intent.ACTION_PICK).apply {
+            val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
                 type = "image/*"
+                addCategory(Intent.CATEGORY_OPENABLE)
+                addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
             }
             startActivityForResult(intent, PICK_IMAGE)
         }
@@ -80,6 +91,15 @@ class Profil : AppCompatActivity() {
             startActivity(Intent(this, MainActivity::class.java))
             finish()
         }
+
+        val btnKembali = findViewById<ImageView>(R.id.btnKembali)
+        btnKembali.setOnClickListener {
+            val intent = Intent(this, utama::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+
     }
 
     private fun showDatePickerDialog() {
@@ -128,11 +148,24 @@ class Profil : AppCompatActivity() {
         Toast.makeText(this, "Data berhasil disimpan", Toast.LENGTH_SHORT).show()
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == PICK_IMAGE && resultCode == RESULT_OK && data != null) {
-            selectedImageUri = data.data
-            imageProfile.setImageURI(selectedImageUri)
+        override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+            super.onActivityResult(requestCode, resultCode, data)
+            if (requestCode == PICK_IMAGE && resultCode == RESULT_OK && data != null) {
+                selectedImageUri = data.data
+
+                selectedImageUri?.let { uri ->
+
+                    contentResolver.takePersistableUriPermission(
+                        uri,
+                        Intent.FLAG_GRANT_READ_URI_PERMISSION
+                    )
+
+                    imageProfile.setImageURI(uri)
+                    sharedPreferences.edit().putString("profileImageUri", uri.toString()).apply()
+                }
+
+            }
+            }
         }
-    }
-}
+
+

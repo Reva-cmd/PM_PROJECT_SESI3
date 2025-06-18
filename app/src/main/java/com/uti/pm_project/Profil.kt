@@ -52,7 +52,8 @@ class Profil : AppCompatActivity() {
         if (savedGender == "Laki-laki") radioGroupGender.check(R.id.radioLaki)
         else if (savedGender == "Perempuan") radioGroupGender.check(R.id.radioPerempuan)
 
-        val imageUriString = sharedPreferences.getString("profileImageUri", null)
+        // Load foto profil
+        val imageUriString = sharedPreferences.getString("foto_profil", null)
         if (!imageUriString.isNullOrEmpty()) {
             val uri = Uri.parse(imageUriString)
             try {
@@ -61,10 +62,9 @@ class Profil : AppCompatActivity() {
             } catch (e: Exception) {
                 e.printStackTrace()
                 Toast.makeText(this, "Foto tidak dapat dimuat", Toast.LENGTH_SHORT).show()
-                sharedPreferences.edit().remove("profileImageUri").apply()
+                sharedPreferences.edit().remove("foto_profil").apply()
             }
         }
-
     }
 
     private fun setupListeners() {
@@ -98,8 +98,6 @@ class Profil : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
-
-
     }
 
     private fun showDatePickerDialog() {
@@ -141,31 +139,26 @@ class Profil : AppCompatActivity() {
         editor.putString("tanggal", tanggal)
         editor.putString("gender", gender)
         selectedImageUri?.let {
-            editor.putString("profileImageUri", it.toString())
+            editor.putString("foto_profil", it.toString())
         }
         editor.apply()
 
         Toast.makeText(this, "Data berhasil disimpan", Toast.LENGTH_SHORT).show()
     }
 
-        override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-            super.onActivityResult(requestCode, resultCode, data)
-            if (requestCode == PICK_IMAGE && resultCode == RESULT_OK && data != null) {
-                selectedImageUri = data.data
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == PICK_IMAGE && resultCode == RESULT_OK && data != null) {
+            selectedImageUri = data.data
+            selectedImageUri?.let { uri ->
+                contentResolver.takePersistableUriPermission(
+                    uri,
+                    Intent.FLAG_GRANT_READ_URI_PERMISSION
+                )
+                imageProfile.setImageURI(uri)
 
-                selectedImageUri?.let { uri ->
-
-                    contentResolver.takePersistableUriPermission(
-                        uri,
-                        Intent.FLAG_GRANT_READ_URI_PERMISSION
-                    )
-
-                    imageProfile.setImageURI(uri)
-                    sharedPreferences.edit().putString("profileImageUri", uri.toString()).apply()
-                }
-
-            }
+                sharedPreferences.edit().putString("foto_profil", uri.toString()).apply()
             }
         }
-
-
+    }
+}

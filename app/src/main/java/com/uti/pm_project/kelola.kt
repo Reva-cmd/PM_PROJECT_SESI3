@@ -45,7 +45,6 @@ class kelola : AppCompatActivity() {
             }
         }
 
-
         val btnResetTarget = findViewById<Button>(R.id.btnReset)
         btnResetTarget.setOnClickListener {
             AlertDialog.Builder(this)

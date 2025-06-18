@@ -65,7 +65,7 @@ class ambil_tabungan : AppCompatActivity() {
             val prefs = getSharedPreferences("BulanDipilih", MODE_PRIVATE)
             val bulanDipilih = prefs.getString("bulan", "") ?: ""
 
-            // Format tanggal dari selectedDate
+
             val sdfTanggal = SimpleDateFormat("yyyy-MM-dd", Locale("id", "ID"))
             val tanggalFormatted = sdfTanggal.format(selectedDate!!)
 
